@@ -1,28 +1,46 @@
-#
-# Changes to this file will be overwritten by `trmnlp pull`.
-#
-# Docs: https://help.usetrmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
-#
 ---
 strategy: polling
 no_screen_padding: 'no'
 dark_mode: 'no'
 static_data: ''
 polling_verb: get
-polling_url: 'https://api.vercel.app/blog'
-polling_headers: 'content-type=application/json'
-name: Plugin Template
-refresh_interval: 1440
+polling_url: |
+  {{ pixelfed_base_url }}/api/v2/instance
+  {{ pixelfed_base_url }}/api/v1/accounts/verify_credentials
+  {{ pixelfed_base_url }}/api/v1/timelines/home
+polling_headers: Authorization=Bearer {{ pixelfed_api_key }}
+id: 103958
 custom_fields:
 - keyname: author_bio
   name: About This Plugin
   field_type: author_bio
-  description: This is template text you should probably update 😁
-  github_url: https://github.com/
-  learn_more_url: https://usetrmnl.com/
-  email_address: email@example.com
-- keyname: example_string
+  description: Show latest photos from your Pixelfed timeline.
+  github_url: https://github.com/stephenyeargin/trmnl-pixelfed
+  learn_more_url: https://pixelfed.org
+  email_address: stephen@yearg.in
+- keyname: pixelfed_base_url
+  field_type: url
+  name: Pixelfed Instance URL
+  description: The base URL of your Pixelfed instance (e.g., https://pixelfed.social)
+  placeholder: https://pixelfed.social
+- keyname: pixelfed_api_key
   field_type: string
-  name: A Configurable String
-  description: Save some data here for use in URLs or controlling the display
-  placeholder: An Example Value
+  name: Pixelfed API Key
+  description: Your Pixelfed API access token for authentication
+  placeholder: Your API token here
+- keyname: pixelfed_layout
+  field_type: select
+  name: Layout
+  description: How to present the photos
+  default: 4col_x_2row
+  options:
+  - 1 column x 1 row: 1col_x_1row
+  - 2 columns x 1 row: 2col_x_1row
+  - 2 columns x 2 rows: 2col_x_2row
+  - 3 columns x 1 row: 3col_x_1row
+  - 3 columns x 2 rows: 3col_x_2row
+  - 3 columns x 3 rows: 3col_x_3row
+  - 4 columns x 1 row: 4col_x_1row
+  - 4 columns x 2 rows: 4col_x_2row
+name: Pixelfed
+refresh_interval: 60

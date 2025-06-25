@@ -1,1 +1,47 @@
+{% assign instance = IDX_0.data %}
+{% assign account = IDX_1 %}
+{% assign statuses = IDX_2.data %}
 
+{% assign layout_name = trmnl.plugin_settings.custom_fields_values.pixelfed_layout %}
+{% assign columns = 4 %}
+{% assign photos = 8 %}
+
+{% if layout_name == '1col_x_1row' %}
+  {% assign columns = 1 %}
+  {% assign photos = 1 %}
+{% endif %}
+
+{% if layout_name == '2col_x_1row' %}
+  {% assign columns = 2 %}
+  {% assign photos = 2 %}
+{% endif %}
+
+{% if layout_name == '3col_x_1row' %}
+  {% assign columns = 3 %}
+  {% assign photos = 3 %}
+{% endif %}
+
+{% if layout_name == '4col_x_1row' %}
+  {% assign columns = 4 %}
+  {% assign photos = 4 %}
+{% endif %}
+
+{% if layout_name == '4col_x_2row' %}
+  {% assign columns = 4 %}
+  {% assign photos = 8 %}
+{% endif %}
+
+{% if layout_name == '2col_x_2row' %}
+  {% assign columns = 2 %}
+  {% assign photos = 4 %}
+{% endif %}
+
+{% if layout_name == '3col_x_2row' %}
+  {% assign columns = 3 %}
+  {% assign photos = 6 %}
+{% endif %}
+
+{% if layout_name == '3col_x_3row' %}
+  {% assign columns = 3 %}
+  {% assign photos = 9 %}
+{% endif %}

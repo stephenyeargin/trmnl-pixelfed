@@ -7,12 +7,16 @@ watch:
   - src
 
 # values of custom fields (defined in src/settings.yml)
-custom_fields: {}
+custom_fields: {
+  pixelfed_base_url: https://photos.yeargin.social,
+  pixelfed_api_key: '{{ env.PIXELFED_API_KEY }}',
+  pixelfed_layout: '4col_x_2row'
+}
 
 # override variables
 variables:
   trmnl: {
     plugin_settings: {
-      instance_name: 'My Instance'
+      instance_name: 'Pixelfed'
     }
   }

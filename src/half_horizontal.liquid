@@ -1,19 +1,23 @@
 <div class="view">
-  <div class="layout layout--row layout--top">
-    <div class="grid grid--cols-2 gap--medium">
-      <div class="item">
-        <div class="meta"></div>
-        <div class="content">
-          <div class="label label--medium">Half Horizontal</div>
-          <div class="description">Replace me with your content!</div>
+  <div class="layout layout--row mb--1">
+    <div class="grid grid--cols-{{ columns }} gap--small">
+      {% for status in statuses limit: photos %}
+        <div class="col col--span-1 col--center row--center">
+          <div class="">
+            <div style="align--middle; aspect-ratio: 1; overflow: hidden;">
+              <img class="image image-dither w--full" style="height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.2) brightness(1.1) saturate(0.8);" src="{{ status.media_attachments.first.preview_url }}" />
+            </div>
+          </div>
         </div>
-      </div>
+        {% endfor %}
     </div>
   </div>
 
+  {% if photos > 3 %}
   <div class="title_bar">
-    <img class="image" src="https://usetrmnl.com/images/brand/glyphs/glyph--black.svg" />
-    <span class="title">Plugin Template</span>
+    <img class="image image-stroke image-stroke--large" src="https://raw.githubusercontent.com/pixelfed/pixelfed/aba85566f26939a3c3045548153dcbaa66ac01be/public/img/pixelfed-icon-black.svg" />
+    <span class="title">@{{ account.username }} ({{ account.display_name }})</span>
     <span class="instance">{{ trmnl.plugin_settings.instance_name }}</span>
   </div>
+  {% endif %}
 </div>
