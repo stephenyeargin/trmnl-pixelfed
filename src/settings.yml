@@ -21,7 +21,7 @@ custom_fields:
 - keyname: pixelfed_base_url
   field_type: url
   name: Pixelfed Instance URL
-  description: The base URL of your Pixelfed instance (e.g., https://pixelfed.social)
+  description: The base URL of your Pixelfed instance (e.g., <a href="https://pixelfed.social" class="underline">https://pixelfed.social</a>)
   placeholder: https://pixelfed.social
 - keyname: pixelfed_api_key
   field_type: string
