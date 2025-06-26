@@ -26,8 +26,8 @@ custom_fields:
 - keyname: pixelfed_api_key
   field_type: string
   name: Pixelfed API Key
-  description: Your Pixelfed API access token for authentication
-  placeholder: Your API token here
+  description: Your Pixelfed API access token with &quot;read&quot; for authentication, as described <a href="https://pixelfed.social/settings/applications" class="underline" target="_blank">here</a>.
+  placeholder: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.xxxxxxxx.xxxxxxxx
 - keyname: pixelfed_layout
   field_type: select
   name: Layout
