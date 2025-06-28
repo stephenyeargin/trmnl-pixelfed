@@ -1,6 +1,13 @@
 {% assign instance = IDX_0.data %}
 {% assign account = IDX_1 %}
 {% assign statuses = IDX_2.data %}
+{% assign statuses_tags = IDX_3.data %}
+
+{% capture title_bar %}@{{ account.username }} ({{ account.display_name }}){% endcapture %}
+{% if trmnl.plugin_settings.custom_fields_values.pixelfed_tag != blank %}
+  {% assign statuses = statuses_tags %}
+  {% capture title_bar %}#{{ trmnl.plugin_settings.custom_fields_values.pixelfed_tag | replace: '#', '' }}{% endcapture %}
+{% endif %}
 
 {% assign layout_name = trmnl.plugin_settings.custom_fields_values.pixelfed_layout %}
 {% assign columns = 4 %}

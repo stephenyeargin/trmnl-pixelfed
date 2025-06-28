@@ -9,14 +9,21 @@
             </div>
           </div>
         </div>
-        {% endfor %}
+      {% else %}
+        <div class="item col col--span-{{ columns }}">
+          <div class="meta"></div>
+          <div class="content">
+            <span class="description">No matching photos.</span>
+          </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
 
   {% if photos > 1 %}
   <div class="title_bar">
     <img class="image image-stroke image-stroke--large" src="https://raw.githubusercontent.com/pixelfed/pixelfed/aba85566f26939a3c3045548153dcbaa66ac01be/public/img/pixelfed-icon-black.svg" />
-    <span class="title">@{{ account.username }}</span>
+    <span class="title">{{ title_bar }}</span>
     <span class="instance">{{ trmnl.plugin_settings.instance_name }}</span>
   </div>
   {% endif %}

@@ -10,7 +10,8 @@ watch:
 custom_fields: {
   pixelfed_base_url: https://photos.yeargin.social,
   pixelfed_api_key: '{{ env.PIXELFED_API_KEY }}',
-  pixelfed_layout: '4col_x_2row'
+  pixelfed_layout: '4col_x_2row',
+  pixelfed_tag: '#nashville'
 }
 
 # override variables

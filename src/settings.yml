@@ -7,7 +7,8 @@ polling_verb: get
 polling_url: |
   {{ pixelfed_base_url }}/api/v2/instance
   {{ pixelfed_base_url }}/api/v1/accounts/verify_credentials
-  {{ pixelfed_base_url }}/api/v1/timelines/home
+  {{ pixelfed_base_url }}/api/v1/timelines/home?limit=20
+  {{ pixelfed_base_url }}/api/v1/timelines/tag/{{ pixelfed_tag | replace: '#', '' | default: 'pixelfed' }}?limit=20
 polling_headers: Authorization=Bearer {{ pixelfed_api_key }}
 id: 103958
 custom_fields:
@@ -28,6 +29,12 @@ custom_fields:
   name: Pixelfed API Key
   description: Your Pixelfed Personal Access Token (PAT) with &quot;read&quot; permission, found in <code>Settings &raquo; Applications</code>.
   placeholder: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.xxxxxxxx.xxxxxxxx
+- keyname: pixelfed_tag
+  field_type: string
+  name: Tag
+  description: Enter a hashtag to show instead of your Home Feed
+  placeholder: '#pixelfed'
+  optional: true
 - keyname: pixelfed_layout
   field_type: select
   name: Layout
