@@ -25,7 +25,7 @@ custom_fields:
   description: The base URL of your Pixelfed instance
   placeholder: https://pixelfed.social
 - keyname: pixelfed_api_key
-  field_type: string
+  field_type: password
   name: Pixelfed API Key
   description: Your Pixelfed Personal Access Token (PAT) with &quot;read&quot; permission, found in <code>Settings &raquo; Applications</code>.
   placeholder: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.xxxxxxxx.xxxxxxxx
