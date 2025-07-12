@@ -49,5 +49,15 @@ custom_fields:
   - 3 columns x 3 rows: 3col_x_3row
   - 4 columns x 1 row: 4col_x_1row
   - 4 columns x 2 rows: 4col_x_2row
+- keyname: pixelfed_object_fit
+  field_type: select
+  name: Fit
+  description: Whether to crop the photo to fit the space
+  default: cover
+  options:
+  - Cover (crop longest side to cover space): cover
+  - Contain (fit to space, do not crop): contain
+  - Fill (stretch to fill space): fill
+
 name: Pixelfed
 refresh_interval: 60

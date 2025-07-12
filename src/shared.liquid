@@ -9,6 +9,7 @@
   {% capture title_bar %}#{{ trmnl.plugin_settings.custom_fields_values.pixelfed_tag | replace: '#', '' }}{% endcapture %}
 {% endif %}
 
+{% assign object_fit = trmnl.plugin_settings.custom_fields_values.pixelfed_object_fit %}
 {% assign layout_name = trmnl.plugin_settings.custom_fields_values.pixelfed_layout %}
 {% assign columns = 4 %}
 {% assign photos = 8 %}
