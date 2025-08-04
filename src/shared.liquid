@@ -53,3 +53,47 @@
   {% assign columns = 3 %}
   {% assign photos = 9 %}
 {% endif %}
+
+{% assign image_style = 'height: 100%; object-fit: ' | append: object_fit | append: '; filter: grayscale(1) contrast(1.2) brightness(1.1) saturate(0.8);' %}
+
+{%- capture pixelfed_logo_svg %}
+<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg"><path d="M25 50C11.193 50 0 38.807 0 25S11.193 0 25 0s25 11.193 25 25-11.193 25-25 25zm-1.985-19.542h4.586c4.32 0 7.823-3.41 7.823-7.615 0-4.206-3.502-7.616-7.823-7.616h-6.619c-2.492 0-4.513 1.967-4.513 4.394v17.1l6.546-6.263z" fill-rule="evenodd"/></svg>
+{% endcapture %}
+
+{% comment %} Photo grid component {% endcomment %}
+{% capture photo_grid %}
+  <div class="layout layout--row mb--1">
+    <div class="grid grid--cols-{{ columns }} gap--small">
+      {% for status in statuses limit: photos %}
+        <div class="col col--span-1 col--center row--center">
+          <div class="">
+            <div style="aspect-ratio: 1; overflow: hidden;">
+              <img class="image image-dither w--full" style="{{ image_style }}" src="{{ status.media_attachments.first.preview_url }}" />
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="item col col--span-{{ columns }}">
+          <div class="meta"></div>
+          <div class="content">
+            <span class="description">No matching photos.</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture single_photo %}
+  {% for status in statuses limit: photos %}
+    <img class="image image-dither w--full" style="{{ image_style }}" src="{{ status.media_attachments.first.preview_url }}" />
+  {% endfor %}
+{% endcapture %}
+
+{% capture title_bar_html %}
+  <div class="title_bar">
+    <img class="image image-stroke image-stroke--large" src="data:image/svg+xml;base64,{{ pixelfed_logo_svg | base64_encode }}" />
+    <span class="title">{{ title_bar }}</span>
+    <span class="instance">{{ trmnl.plugin_settings.instance_name }}</span>
+  </div>
+{% endcapture %}

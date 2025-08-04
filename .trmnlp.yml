@@ -11,7 +11,7 @@ custom_fields: {
   pixelfed_base_url: https://photos.yeargin.social,
   pixelfed_api_key: '{{ env.PIXELFED_API_KEY }}',
   pixelfed_layout: '4col_x_2row',
-  pixelfed_tag: '#landscape',
+  pixelfed_tag: '#nashville',
   pixelfed_object_fit: cover
 }
 
