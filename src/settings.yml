@@ -10,6 +10,7 @@ polling_url: |
   {{ pixelfed_base_url }}/api/v1/timelines/home?limit=20
   {{ pixelfed_base_url }}/api/v1/timelines/tag/{{ pixelfed_tag | replace: '#', '' | default: 'pixelfed' }}?limit=20
 polling_headers: Authorization=Bearer {{ pixelfed_api_key }}
+polling_body: ''
 id: 103958
 custom_fields:
 - keyname: author_bio
@@ -33,7 +34,7 @@ custom_fields:
   field_type: string
   name: Tag
   description: Enter a hashtag to show instead of your Home Feed
-  placeholder: '#pixelfed'
+  placeholder: "#pixelfed"
   optional: true
 - keyname: pixelfed_layout
   field_type: select
@@ -58,6 +59,5 @@ custom_fields:
   - Cover (crop longest side to cover space): cover
   - Contain (fit to space, do not crop): contain
   - Fill (stretch to fill space): fill
-
 name: Pixelfed
 refresh_interval: 60
