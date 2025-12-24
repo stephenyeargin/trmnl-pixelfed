@@ -7,8 +7,8 @@ polling_verb: get
 polling_url: |
   {{ pixelfed_base_url }}/api/v2/instance
   {{ pixelfed_base_url }}/api/v1/accounts/verify_credentials
-  {{ pixelfed_base_url }}/api/v1/timelines/home?limit=20
-  {{ pixelfed_base_url }}/api/v1/timelines/tag/{{ pixelfed_tag | replace: '#', '' | default: 'pixelfed' }}?limit=20
+  {{ pixelfed_base_url }}/api/v1/timelines/home?limit=9
+  {{ pixelfed_base_url }}/api/v1/timelines/tag/{{ pixelfed_tag | replace: '#', '' | default: 'pixelfed' }}?limit=9
 polling_headers: Authorization=Bearer {{ pixelfed_api_key }}
 polling_body: ''
 id: 103958
