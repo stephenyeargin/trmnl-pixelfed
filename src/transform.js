@@ -14,7 +14,7 @@ function transform(input) {
         ],
       }))
       .filter((status) => status.media_attachments[0].preview_url)
-      .slice(0, 9);
+      .slice(0, 12);
 
   return {
     IDX_0: {

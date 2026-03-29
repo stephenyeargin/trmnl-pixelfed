@@ -54,6 +54,11 @@
   {% assign photos = 9 %}
 {% endif %}
 
+{% if layout_name == '3col_x_4row' %}
+  {% assign columns = 3 %}
+  {% assign photos = 12 %}
+{% endif %}
+
 {% assign image_style = 'height: 100% !important; object-fit: ' | append: object_fit | append: '; filter: grayscale(1) contrast(1.2) brightness(1.1) saturate(0.8);' %}
 
 {%- capture pixelfed_logo_svg %}
