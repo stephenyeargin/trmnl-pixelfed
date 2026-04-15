@@ -16,6 +16,7 @@ custom_fields:
 - keyname: author_bio
   name: About This Plugin
   field_type: author_bio
+  category: images
   description: Show latest photos from your Pixelfed timeline.
   github_url: https://github.com/stephenyeargin/trmnl-pixelfed
   learn_more_url: https://pixelfed.org
