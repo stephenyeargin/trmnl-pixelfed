@@ -61,5 +61,5 @@ custom_fields:
   - Contain (fit to space, do not crop): contain
   - Fill (stretch to fill space): fill
 name: Pixelfed
-description: Recent photos from a Pixelfed hashtag feed
+description: Recent photos from a fediverse tag
 refresh_interval: 60
